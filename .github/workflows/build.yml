@@ -18,7 +18,7 @@ jobs:
       run: ls
 
     - name: "autoconf"
-      run: ./opus/autoconf.sh
+      run: ./opus/autogen.sh
 
     - name: "configure"
       run: .opus//configure
