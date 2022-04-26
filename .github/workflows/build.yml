@@ -36,3 +36,6 @@ jobs:
 
     - name: "help"
       run: ls -a ./opus
+
+    - name: "more help"
+      run: ls -a
