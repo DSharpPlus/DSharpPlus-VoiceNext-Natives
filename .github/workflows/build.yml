@@ -61,4 +61,4 @@ jobs:
         path: "./final/*"
 
     - name: "more info gathering"
-      runs: ls ./src/runtimes
+      run: ls ./src/runtimes
