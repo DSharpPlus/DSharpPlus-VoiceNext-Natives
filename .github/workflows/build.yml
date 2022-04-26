@@ -21,29 +21,14 @@ jobs:
       with:
         dotnet-version: "6.0.x"
 
-    - name: "wtf where did opus go"
-      run: ls
-    
-    - name: "pleaaaaaase"
-      run: ls ./opus
-
     - name: "autoconf"
       run: ./opus/autogen.sh
-
-    - name: "all the data"
-      run: ls ./opus
 
     - name: "configure"
       run: ./opus/configure
 
     - name: "build opus"
       run: make ./opus
-
-    - name: "help"
-      run: ls -a ./opus
-
-    - name: "more help"
-      run: ls -a ./.libs
 
     - name: "create libopus folder"
       run: "mkdir ./src/runtimes/linux-x64"
@@ -59,9 +44,3 @@ jobs:
       with:
         name: "DSharpPlus.VoiceNext.Natives"
         path: "./final/*"
-
-    - name: "more info gathering"
-      run: ls ./src/runtimes
-
-    - name: "weee"
-      run: ls ./src/runtimes/linux-x64
