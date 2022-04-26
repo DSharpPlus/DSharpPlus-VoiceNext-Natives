@@ -26,9 +26,5 @@
       <PackagePath>runtimes</PackagePath>
     </Content>
   </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="libsodium" Version="1.0.18.2" IncludeAssets="all"/>
-  </ItemGroup>
-
+	
 </Project>
