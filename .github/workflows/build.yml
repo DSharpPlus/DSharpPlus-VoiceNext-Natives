@@ -38,4 +38,4 @@ jobs:
       run: ls -a ./opus
 
     - name: "more help"
-      run: ls -a
+      run: ls -a ./.libs
