@@ -35,4 +35,4 @@ jobs:
       run: make ./opus
 
     - name: "help"
-      run: ls ./opus
+      run: ls -a ./opus
