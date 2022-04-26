@@ -1,0 +1,46 @@
+name: "Build Package"
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: "Install Opus build dependencies"
+      run: sudo apt-get install autoconf automake libtool gcc make
+
+    - name: "Install .NET"
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: "6.0.x"
+
+    - name: "autoconf"
+      run: ./opus/autogen.sh
+
+    - name: "configure"
+      run: ./opus/configure
+
+    - name: "build opus"
+      run: make ./opus
+
+    - name: "create libopus folder"
+      run: "mkdir ./src/runtimes/linux-x64"
+
+    - name: "copy opus"
+      run: cp ./.libs/libopus.so ./src/runtimes/linux-x64
+
+    - name: "build"
+      run: mkdir ./final && dotnet pack -o ./final
+
+    - name: "Upload built package"
+      uses: actions/upload-artifact@v3
+      with:
+        name: "DSharpPlus.VoiceNext.Natives"
+        path: "./final/*"
