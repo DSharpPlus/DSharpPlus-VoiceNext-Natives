@@ -62,3 +62,6 @@ jobs:
 
     - name: "more info gathering"
       run: ls ./src/runtimes
+
+    - name: "weee"
+      run: ls ./src/runtimes/linux-x64
