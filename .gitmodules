@@ -1,0 +1,4 @@
+[submodule "opus"]
+	path = opus
+	url = https://gitlab.xiph.org/xiph/opus.git
+	branch = master

@@ -2,18 +2,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>DSharpPlus.VoiceNext.Natives</PackageId>
     <Description>Voice Natives for DSharpPlus.</Description>
     <PackageTags>discord, discord-api, bots, discord-bots, chat, dsharp, dsharpplus, csharp, dotnet, vb-net, fsharp, audio, voice, radio, music</PackageTags>
-    <Version>1.0.0</Version>
-    <Authors>Emzi0767, WamWooWam</Authors>
+    <Version>2.0.0</Version>
+    <Authors>Emzi0767, WamWooWam, ExaInsanity</Authors>
 		<Company>DSharpPlus developers</Company>
 		<PackageLicenseUrl>https://github.com/DSharpPlus/DSharpPlus-VoiceNext-Natives/blob/master/LICENSES.MD</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/DSharpPlus/DSharpPlus-VoiceNext-Natives</PackageProjectUrl>
@@ -27,6 +25,10 @@
       <Pack>true</Pack>
       <PackagePath>runtimes</PackagePath>
     </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="libsodium" Version="1.0.18.2" IncludeAssets="all"/>
   </ItemGroup>
 
 </Project>

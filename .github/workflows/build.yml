@@ -1,0 +1,24 @@
+name: "Build Package"
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: "Install Opus build dependencies"
+      run: apt-get install autoconf automake libtool gcc make
+
+    - name: "autoconf"
+      run: ./autoconf.sh
+
+    - name: "configure"
+      run: ./configure
+
+    - name: "build opus"
+      run: make
