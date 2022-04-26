@@ -16,6 +16,11 @@ jobs:
     - name: "Install Opus build dependencies"
       run: sudo apt-get install autoconf automake libtool gcc make
 
+    - name: "Install .NET"
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: "6.0.x"
+
     - name: "wtf where did opus go"
       run: ls
     
@@ -39,3 +44,9 @@ jobs:
 
     - name: "more help"
       run: ls -a ./.libs
+
+    - name: "create libopus folder"
+      run: "mkdir ./src/runtimes/linux-x64"
+
+    - name: "copy opus"
+      run: cp ./.libs/libopus.so ./src/runtimes/linux-x64
