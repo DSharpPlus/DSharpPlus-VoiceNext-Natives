@@ -50,3 +50,12 @@ jobs:
 
     - name: "copy opus"
       run: cp ./.libs/libopus.so ./src/runtimes/linux-x64
+
+    - name: "build"
+      run: mkdir ./final && dotnet pack -o ./final
+
+    - name: "Upload built package"
+      uses: actions/upload-artifact@v3
+      with:
+        name: "DSharpPlus.VoiceNext.Natives"
+        path: "./final/*"
