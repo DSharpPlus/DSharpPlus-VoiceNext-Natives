@@ -25,6 +25,9 @@ jobs:
     - name: "autoconf"
       run: ./opus/autogen.sh
 
+    - name: "all the data"
+      run: ls ./opus
+
     - name: "configure"
       run: .opus/configure
 
