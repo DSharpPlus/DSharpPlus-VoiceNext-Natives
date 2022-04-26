@@ -16,6 +16,9 @@ jobs:
 
     - name: "wtf where did opus go"
       run: ls
+    
+    - name: "pleaaaaaase"
+      run: ls ./opus
 
     - name: "autoconf"
       run: ./opus/autogen.sh
@@ -27,4 +30,4 @@ jobs:
       run: make ./opus
 
     - name: "help"
-      run: cd ./opus && ls
+      run: ls ./opus
